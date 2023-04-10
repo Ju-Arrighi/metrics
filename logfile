@@ -1,0 +1,35 @@
+2023-04-10 16:16:08.303 -03 [50227] LOG:  starting PostgreSQL 14.7 (Homebrew) on aarch64-apple-darwin22.1.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2023-04-10 16:16:08.304 -03 [50227] LOG:  listening on IPv6 address "::1", port 5432
+2023-04-10 16:16:08.304 -03 [50227] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-04-10 16:16:08.305 -03 [50227] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-04-10 16:16:08.311 -03 [50228] LOG:  database system was shut down at 2023-03-19 19:05:29 -03
+2023-04-10 16:16:08.315 -03 [50227] LOG:  database system is ready to accept connections
+2023-04-10 16:16:51.734 -03 [50280] FATAL:  role "metrics" does not exist
+2023-04-10 16:28:59.228 -03 [51495] ERROR:  database "metrics_development" already exists
+2023-04-10 16:28:59.228 -03 [51495] STATEMENT:  CREATE DATABASE "metrics_development" ENCODING = 'unicode'
+2023-04-10 16:28:59.232 -03 [51496] ERROR:  database "metrics_test" already exists
+2023-04-10 16:28:59.232 -03 [51496] STATEMENT:  CREATE DATABASE "metrics_test" ENCODING = 'unicode'
+2023-04-10 16:28:59.234 -03 [51497] FATAL:  role "metrics" does not exist
+2023-04-10 16:29:30.541 -03 [51569] FATAL:  role "metrics" does not exist
+2023-04-10 16:35:15.001 -03 [51695] ERROR:  database "metrics_development" already exists
+2023-04-10 16:35:15.001 -03 [51695] STATEMENT:  CREATE DATABASE "metrics_development" ENCODING = 'unicode'
+2023-04-10 16:35:15.005 -03 [51696] ERROR:  database "metrics_test" already exists
+2023-04-10 16:35:15.005 -03 [51696] STATEMENT:  CREATE DATABASE "metrics_test" ENCODING = 'unicode'
+2023-04-10 16:35:15.007 -03 [51697] FATAL:  role "metrics" does not exist
+2023-04-10 16:40:15.373 -03 [51931] ERROR:  database "metrics_development" already exists
+2023-04-10 16:40:15.373 -03 [51931] STATEMENT:  CREATE DATABASE "metrics_development" ENCODING = 'unicode'
+2023-04-10 16:40:15.377 -03 [51932] ERROR:  database "metrics_test" already exists
+2023-04-10 16:40:15.377 -03 [51932] STATEMENT:  CREATE DATABASE "metrics_test" ENCODING = 'unicode'
+2023-04-10 16:40:15.379 -03 [51933] FATAL:  role "metrics" does not exist
+2023-04-10 16:41:59.501 -03 [52143] ERROR:  database "metrics_development" already exists
+2023-04-10 16:41:59.501 -03 [52143] STATEMENT:  CREATE DATABASE "metrics_development" ENCODING = 'unicode'
+2023-04-10 16:41:59.505 -03 [52144] ERROR:  database "metrics_test" already exists
+2023-04-10 16:41:59.505 -03 [52144] STATEMENT:  CREATE DATABASE "metrics_test" ENCODING = 'unicode'
+2023-04-10 16:41:59.507 -03 [52145] FATAL:  role "metrics" does not exist
+2023-04-10 16:50:11.589 -03 [52484] FATAL:  role "metrics" does not exist
+2023-04-10 16:52:10.219 -03 [50227] LOG:  server process (PID 52755) was terminated by signal 9: Killed: 9
+2023-04-10 16:52:10.219 -03 [50227] LOG:  terminating any other active server processes
+2023-04-10 16:52:10.226 -03 [50227] LOG:  all server processes terminated; reinitializing
+2023-04-10 16:52:10.239 -03 [50227] LOG:  startup process (PID 52756) was terminated by signal 9: Killed: 9
+2023-04-10 16:52:10.239 -03 [50227] LOG:  aborting startup due to startup process failure
+2023-04-10 16:52:10.240 -03 [50227] LOG:  database system is shut down
