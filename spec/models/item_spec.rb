@@ -3,8 +3,12 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
   it "should be valid if it has name, value and timestamp" do
-    item = create(:item)
+    item = FactoryBot.create(:item)
     expect(item).to be_valid
+  end
+  it "should be valid if it has name, value and timestamp" do
+    item = FactoryBot.create(:item)
+    expect(item.name).to eq("Apple")
   end
   it "validation value should exist" do
     item = build(:item, value: nil)
