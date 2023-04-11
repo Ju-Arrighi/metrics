@@ -7,5 +7,13 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 puts "-------------- SEEDING -------------------"
-Item.create(name: Faker::Commerce.brand, value: Faker::Commerce.price)
+
+50.times do
+  Item.create({name: Faker::Commerce.brand, value: Faker::Commerce.price, timestamp: Faker::Time.backward(days: 14)})
+end
+
 puts "----------- SEEDED SUCCESSFULLY ----------"
+#  1000.times do |item|
+#     new_item = Item.create({name: Faker::Commerce.brand, value: Faker::Commerce.price})
+#     new_item.timestamp.create!({created_at: rand(3.years.ago..Time.now) })
+#   end
