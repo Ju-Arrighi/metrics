@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
 puts "-------------- SEEDING -------------------"
-Item.create(name:  "Shoes", value: 10)
+Item.create(name: Faker::Commerce.brand, value: Faker::Commerce.price)
 puts "----------- SEEDED SUCCESSFULLY ----------"
