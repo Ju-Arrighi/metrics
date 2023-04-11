@@ -82,5 +82,4 @@ test:
 production:
   <<: *default
   database: metrics_production
-  # username: metrics
   password: <%= ENV["METRICS_DATABASE_PASSWORD"] %>
