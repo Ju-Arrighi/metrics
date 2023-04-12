@@ -16,5 +16,6 @@
 <% end %>
 
 
-<%= line_chart Item.group_by_day(:created_at).count %>
+<%= line_chart Item.group_by_second(:created_at).count %>
 
+<%= pie_chart Item.group(:name).count %>
