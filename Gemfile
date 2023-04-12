@@ -54,6 +54,12 @@ gem "faker"
 # Capybara to test features
 gem 'capybara'
 
+# Use Chartkick to create chart
+gem "chartkick"
+
+# Use Groupdate to allow grouping with timestamp info
+gem "groupdate"
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
