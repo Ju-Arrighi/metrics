@@ -51,6 +51,9 @@ gem "bootsnap", require: false
 # Use Faker to fake data in the database
 gem "faker"
 
+# Capybara to test features
+gem 'capybara'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
