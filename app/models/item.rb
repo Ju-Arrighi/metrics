@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :value, :timestamp, presence: true
 end

@@ -6,24 +6,20 @@ RSpec.describe Item, type: :model do
     item = FactoryBot.create(:item)
     expect(item).to be_valid
   end
-  it "should be valid if it has name, value and timestamp" do
-    item = FactoryBot.create(:item)
-    expect(item.name).to eq("Apple")
-  end
-  it "validation value should exist" do
-    item = build(:item, value: nil)
+  it "should be invalid if name doesn't exist" do
+    item = FactoryBot.build(:item, name: nil)
     item.valid?
-    expect(item.errors[:value]).to include("can't be blanck")
+    expect(item.errors[:name]).to include("can't be blank")
   end
-  it "validation name should exist" do
-    item = build(:item, name: nil)
+  it "should be invalid if value doesn't exist" do
+    item = FactoryBot.build(:item, value: nil)
     item.valid?
-    expect(item.errors[:name]).to include("can't be blanck")
+    expect(item.errors[:value]).to include("can't be blank")
   end
-  it "validation timestamp should exist" do
-    item = build(:item, timestamp: nil)
+  it "should be invalid if timestamp doesn't exist" do
+    item = FactoryBot.build(:item, timestamp: nil)
     item.valid?
-    expect(item.errors[:timestamp]).to include("can't be blanck")
+    expect(item.errors[:timestamp]).to include("can't be blank")
   end
   it "class and instance methods should work correctly"
 end
