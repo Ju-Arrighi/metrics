@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(items_params)
     if @item.save
+      # binding.pry
       redirect_to root_path, notice: "Metric added successfully"
     else
       redirect_to root_path, notice: "Invalid data, try again."
