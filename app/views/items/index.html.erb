@@ -1,2 +1,20 @@
-<h1>Hello world</h1>
+
+<h1>Welcome Brand Metrics</h1>
+
+<%= form_for @item do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :value %>
+  <%= f.text_field :value %>
+  <%= f.label :timestamp %>
+  <%= f.text_field :timestamp, value: DateTime.now %>
+  <%= f.submit 'Add a metric' %>
+<% end %>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+
 <%= line_chart Item.group_by_day(:created_at).count %>
+

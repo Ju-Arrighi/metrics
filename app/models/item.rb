@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-  has_many :timestamps
+  validates :name, :value, :timestamp, presence: true
 end
