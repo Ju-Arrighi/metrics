@@ -6,11 +6,10 @@
   <%= f.label :value %>
   <%= f.text_field :value %>
   <%= f.label :timestamp %>
-  <%= f.text_field :timestamp, value: Time.now %>
+  <%= f.text_field :timestamp, value: DateTime.now %>
   <%= f.submit 'Add a metric' %>
 <% end %>
 
 <% if flash[:notice] %>
   <p><%= flash[:notice] %></p>
 <% end %>
-<%# <%= link_to "Add a metric",  %> %>
