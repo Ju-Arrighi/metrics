@@ -70,6 +70,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    chartkick (5.0.1)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -82,6 +83,8 @@ GEM
       i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    groupdate (6.2.0)
+      activesupport (>= 5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -206,8 +209,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  chartkick
   debug
   faker
+  groupdate
   importmap-rails
   jbuilder
   pg (~> 1.4)
