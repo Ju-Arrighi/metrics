@@ -10,7 +10,9 @@ puts "-------------- SEEDING -------------------"
 start_date = Date.new(2022, 4, 1)
 end_date = Date.new(2023, 4, 12)
 50.times do
-  Item.create({name: Faker::Commerce.brand, value: Faker::Commerce.price, timestamp: Faker::Time.between_dates(from: Date.today - 5, to: Date.today)})
+  # Item.create({name: Faker::Commerce.brand, value: Faker::Commerce.price, timestamp: Faker::Time.between_dates(from: Date.today - 5, to: Date.today)})
+  Item.create({name: Faker::Commerce.brand, value: Faker::Commerce.price, timestamp: Faker::Time.between_dates(from: Date.today - 5, to: Date.today,), created_at: rand(2.months.ago..Time.now)})
+
 end
 
 puts "----------- SEEDED SUCCESSFULLY ----------"
