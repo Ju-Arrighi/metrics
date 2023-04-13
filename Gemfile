@@ -60,6 +60,9 @@ gem "chartkick"
 # Use Groupdate to allow grouping with timestamp info
 gem "groupdate"
 
+# Webpacker to make easier React user
+gem 'webpacker'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
