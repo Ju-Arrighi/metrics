@@ -3,3 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "chartkick"
 import "Chart.bundle"
+
+// Configure React-Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
