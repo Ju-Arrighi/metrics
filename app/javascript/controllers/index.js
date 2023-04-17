@@ -10,40 +10,22 @@ eagerLoadControllersFrom("controllers", application)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
-import Tab from 'react-bootstrap/Tab';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-import Sonnet from '../../components/Sonnet';
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function LeftTabsExample() {
-  return (
-    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-      <Row>
-        <Col sm={3}>
-          <Nav variant="pills" className="flex-column">
-            <Nav.Item>
-              <Nav.Link eventKey="first">Tab 1</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="second">Tab 2</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Col>
-        <Col sm={9}>
-          <Tab.Content>
-            <Tab.Pane eventKey="first">
-              <Sonnet />
-            </Tab.Pane>
-            <Tab.Pane eventKey="second">
-              <Sonnet />
-            </Tab.Pane>
-          </Tab.Content>
-        </Col>
-      </Row>
-    </Tab.Container>
-  );
-}
+ReactDOM.render(<App />, document.getElementById('root'));
 
-export default LeftTabsExample;
+// import { HelloWorld } from "./components/HelloWorld"
+// HelloWorld()
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+ReactDOM.render(<App />, document.getElementById('root'));
