@@ -37,7 +37,8 @@ Overall, a good README should provide a clear and concise overview of your proje
 
 **Factorial Technical Challenge**
 
-This is the technical challenge regarding the application for the position of Growth Engineer. The specs are {HERE}(amenitiz-checkout-system-readme.md).
+This is the technical challenge regarding the application for the position of Growth Engineer. The specs are {HERE}(amenitiz-checkout-system-readme.md). The app gather metrics that relate brands with purchase values of their products. Every input has the name of the brand, its value and a associated timestamp.
+
 Some highlights about the code:
 
 1 - The interface
@@ -73,7 +74,3 @@ It uses Rspec, Factory Bot and Capybara for testing.
 **Usage instructions**
 
 The app is simple to use. You can just type the metrics information to be added at the database and it automatically plots graphs in a dashbord format.
-
-**To do**
-
-I would like to improve app flexibility. I made some comments about it but didn't run the idea. I will still work on it to improve it.
