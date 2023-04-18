@@ -1,26 +1,35 @@
-<div class="container">
-  <%= form_for @item do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :value %>
-    <%= f.text_field :value %>
-    <%= f.label :timestamp %>
-    <%= f.text_field :timestamp, value: DateTime.now %>
-    <%= f.submit 'Add a metric' %>
-  <% end %>
+<div class="tab-panels">
 
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
+  <section id="graphs" class="tab-panel">
+    <%= line_chart Item.group_by_day(:created_at).count, label: "Products purchase" %>
 
+    <%= pie_chart Item.group(:name).count %>
 
-  <%= line_chart Item.group_by_day(:created_at).count, label: "Products purchase" %>
+    <%= bar_chart Item.group(:name).sum(:value) %>
 
-  <%= pie_chart Item.group(:name).count %>
+    <%= column_chart Item.group_by_hour_of_day(:created_at, format: "%l %P").count %>
+    <%# { reduce(:+) / size.to_f } %>
+  <%# <%= bar_chart Item.group(name:).sum(:value) %>
+  </section>
 
-  <%= bar_chart Item.group(:name).sum(:value) %>
+  <section id="post" class="tab-panel">
+    <%= form_for @item do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :value %>
+      <%= f.text_field :value %>
+      <%= f.label :timestamp %>
+      <%= f.text_field :timestamp, value: DateTime.now %>
+      <%= f.submit 'Add a metric' %>
+    <% end %>
 
-  <%= column_chart Item.group_by_hour_of_day(:created_at, format: "%l %P").count %>
-  <%# { reduce(:+) / size.to_f } %>
-<%# <%= bar_chart Item.group(name:).sum(:value) %>
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
+  </section>
+
+  <section id="data" class="tab-panel">
+    <%= @items %>
+  </section>
+
 </div>
