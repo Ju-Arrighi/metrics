@@ -1,20 +1,43 @@
+<div class="tab-panels">
 
-<h1>Welcome Brand Metrics</h1>
+  <section id="graphs" class="tab-panel">
+    <h2>Brand purchase: quantity amount in a Timeline</h2>
+    <%= line_chart Item.group_by_day(:created_at).count, label: "Products purchase" %>
 
-<%= form_for @item do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :value %>
-  <%= f.text_field :value %>
-  <%= f.label :timestamp %>
-  <%= f.text_field :timestamp, value: DateTime.now %>
-  <%= f.submit 'Add a metric' %>
-<% end %>
+    <h2>Brands purchase: quantity of products</h2>
+    <%= pie_chart Item.group(:name).count %>
 
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
+    <h2>Brands purchase: revenue</h2>
+    <%= bar_chart Item.group(:name).sum(:value) %>
 
+    <h2>Brands purchase: purchase per hour</h2>
+    <%= column_chart Item.group_by_hour_of_day(:created_at, format: "%l %P").count %>
+  </section>
 
-<%= line_chart Item.group_by_day(:created_at).count %>
+  <section id="post" class="tab-panel">
+    <h2>Input your brand data:</h2>
+    <%= form_for @item do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :value %>
+      <%= f.text_field :value %>
+      <%= f.label :timestamp %>
+      <%= f.text_field :timestamp, value: DateTime.now %>
+      <%= f.submit 'Add a metric', html: { id: "button" } %>
+    <% end %>
 
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
+  </section>
+
+  <section id="data" class="tab-panel">
+    <% @items.each do |item| %>
+      <p><%= item.name %></p>
+      <p><%= item.value %></p>
+      <p><%= item.timestamp %></p>
+      <p>----------------------------------------------------</p>
+    <% end %>
+  </section>
+
+</div>

@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+/* Your CSS partials */
+@import "components/index";
+@import "components/header";
+@import "components/navbar";
+@import "components/button"
