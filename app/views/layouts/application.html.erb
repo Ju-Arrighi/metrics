@@ -11,6 +11,31 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header-metrics">
+      <h1>Welcome Brand Metrics</h1>
+    </header>
+    <nav class="tabset">
+      <%# <ul class="list-inline tabs-underlined">
+        <li>
+          <a href="#" class="tab-underlined active">Graphs</a>
+        </li>
+        <li>
+          <a href="#" class="tab-underlined">Post data</a>
+        </li>
+        <li>
+          <a href="#" class="tab-underlined">See database</a>
+        </li>
+      </ul> %>
+      <!-- Tab 1 -->
+      <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+      <label for="tab1">Graphs</label>
+      <!-- Tab 2 -->
+      <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+      <label for="tab2">Post data</label>
+      <!-- Tab 3 -->
+      <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+      <label for="tab3">See database</label>
+      <%= yield %>
+    </nav>
   </body>
 </html>

@@ -1,28 +1,26 @@
 <div class="container">
-<h1>Welcome Brand Metrics</h1>
+  <%= form_for @item do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :value %>
+    <%= f.text_field :value %>
+    <%= f.label :timestamp %>
+    <%= f.text_field :timestamp, value: DateTime.now %>
+    <%= f.submit 'Add a metric' %>
+  <% end %>
 
-<%= form_for @item do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :value %>
-  <%= f.text_field :value %>
-  <%= f.label :timestamp %>
-  <%= f.text_field :timestamp, value: DateTime.now %>
-  <%= f.submit 'Add a metric' %>
-<% end %>
-
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
 
 
-<%= line_chart Item.group_by_day(:created_at).count, label: "Products purchase" %>
+  <%= line_chart Item.group_by_day(:created_at).count, label: "Products purchase" %>
 
-<%= pie_chart Item.group(:name).count %>
+  <%= pie_chart Item.group(:name).count %>
 
-<%= bar_chart Item.group(:name).sum(:value) %>
+  <%= bar_chart Item.group(:name).sum(:value) %>
 
-<%= column_chart Item.group_by_hour_of_day(:created_at, format: "%l %P").count %>
-<%# { reduce(:+) / size.to_f } %>
-<%# <%= bar_chart Item.group(name:).sum(:value) %> %>
+  <%= column_chart Item.group_by_hour_of_day(:created_at, format: "%l %P").count %>
+  <%# { reduce(:+) / size.to_f } %>
+<%# <%= bar_chart Item.group(name:).sum(:value) %>
 </div>
