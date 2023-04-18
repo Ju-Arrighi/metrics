@@ -12,8 +12,6 @@
 
     <h2>Brands purchase: purchase per hour</h2>
     <%= column_chart Item.group_by_hour_of_day(:created_at, format: "%l %P").count %>
-    <%# { reduce(:+) / size.to_f } %>
-  <%# <%= bar_chart Item.group(name:).sum(:value) %>
   </section>
 
   <section id="post" class="tab-panel">
